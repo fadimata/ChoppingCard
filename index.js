@@ -15,6 +15,7 @@ const lienBag = document.querySelector(".lienBag");
 const lienShoes = document.querySelector(".lienShoes");
 const allStar = document.querySelectorAll(".allStar");
 const tBody = document.querySelector("#tBody");
+const test = document.querySelector(".button2");
 const totallll = 0;
 
 
@@ -817,6 +818,7 @@ btnAddToCard.forEach((button, index) => {
     }
     localStorage.setItem("tableData", JSON.stringify(tableData));
     insertElements();
+    caluculTotal();
   });
 });
 }
@@ -835,7 +837,7 @@ function insertElements() {
                     <td class="p-3">${element.prix * element.quantity}</td>
                     <td class="p-3">${element.quantity} </td>
                     <td class="p-3">
-                    <svg onclick="supprimerLigne()" class="trash cursor-pointer w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <svg onclick="supprimerLigne" class="trash cursor-pointer w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
                     </svg>
                     </td> 
@@ -848,8 +850,8 @@ insertElements();
 
 /* _____________________________________ Calcul de la total des prix____________________________________________________________ */
 let tableTotal = 0;
-let totalCard = JSON.parse(localStorage.getItem("tableData")) || [];
 function caluculTotal() {
+  let totalCard = JSON.parse(localStorage.getItem("tableData")) || [];
   let t = 0;
   totalCard.forEach((valeur) => {
     let total = 0;
@@ -858,13 +860,11 @@ function caluculTotal() {
     t += total;
   });
   console.log(t);
-  return (tableTotal = t);
+  tableTotal = t;
+  test.textContent = "total : " + tableTotal + " F CFA";
 }
 caluculTotal();
-console.log(tableTotal);
-const test = document.querySelector(".button2");
-console.log(test);
-test.textContent = "total : " + tableTotal + " F CFA";
+
 
 // Ajout de l'événements pour le clic sur tous les boutons avec la classe "supprimer"
 boutonsSupprimer = document.querySelectorAll(".trash");
@@ -878,6 +878,8 @@ function supprimerLigne(event) {
   if (ligneASupprimer) {
     ligneASupprimer.remove();
   }
+  console.log(tableData);
+  caluculTotal()
 }
 
 // navbar
