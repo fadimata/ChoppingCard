@@ -934,10 +934,138 @@ class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 
 `;
 });
 
+function recherche(e) {
+  allCard.innerHTML= '';
+  data.forEach(element => {
+    if (element.categori.toLowerCase().includes(e)) {
+      allCard.innerHTML += `
+        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <a >
+            <img class="p-4 rounded-t-lg" src=${
+              element.img
+            } alt="product image" />
+        </a>
+        <div class="px-5 pb-5 ">
+            <a> 
+                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                  element.nom
+                }</h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+            <ul class="my-1 flex list-none gap-1 p-0" data-te-rating-init>
+            <li>
+              <span
+                class="text-primary [&>svg]:h-5 [&>svg]:w-5"
+                title="Bad"
+                data-te-rating-icon-ref>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <span
+                class="text-primary [&>svg]:h-5 [&>svg]:w-5"
+                title="Poor"
+                data-te-rating-icon-ref>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <span
+                class="text-primary [&>svg]:h-5 [&>svg]:w-5"
+                title="OK"
+                data-te-rating-icon-ref>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <span
+                class="text-primary [&>svg]:h-5 [&>svg]:w-5"
+                title="Good"
+                data-te-rating-icon-ref>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+              </span>
+            </li>
+            <li>
+              <span
+                class="text-primary [&>svg]:h-5 [&>svg]:w-5"
+                title="Excellent"
+                data-te-rating-icon-ref>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
+                </svg>
+              </span>
+            </li>
+          </ul>
+                <span
+                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+            </div>
+            <div class="flex items-center justify-between">
+                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                  element.prix + " F CFA"
+                } </span>
+                <a
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+            </div>
+        </div>
+    </div>`
+    }
+  });
+}
+
 // input de recherche
 const inputSearch = document.getElementById('Search')
+
 inputSearch.addEventListener('input', function (){
-  let searchText = searchInput.value.toLowerCase();
+  let searchText = inputSearch.value.toLowerCase();
+  recherche(searchText)
 })
 
 function showToast() {
