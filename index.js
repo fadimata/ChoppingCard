@@ -766,7 +766,7 @@ lienShoes.addEventListener("click", function () {
   }
 });
 
-/* ____________________________________ les bouton de ma carde du panier_____________________________________________________________ */
+/* ____________________________________ les bouton de ma card du panier_____________________________________________________________ */
 document.addEventListener("DOMContentLoaded", function () {
   const modalButtons = document.querySelectorAll("[data-modal-toggle]");
   const closeModalButtons = document.querySelectorAll("[data-modal-hide]");
@@ -811,6 +811,7 @@ btnAddToCard.forEach((button, index) => {
         img: achat.img,
         prix: achat.prix,
         quantity: 1,
+        id: achat.id
       };
       tableData.push(object);
       showToast();
@@ -825,19 +826,18 @@ btnAddToCard.forEach((button, index) => {
 
 addCard()
 
- let lAjout = JSON.parse(localStorage.getItem("tableData")) || [];
- tableData = lAjout;
 function insertElements() {
-  lAjout.forEach((element) => {
+  let lAjout = JSON.parse(localStorage.getItem("tableData")) || [];
+  tableData = lAjout;
+  tBody.innerHTML = ''
+  lAjout.forEach((element ) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `<td class="p-3"><img class="w-8 h-8 rounded-2xl" src="${element.img}"></td> 
-                    <td class="p-3">${
-                      element.nom
-                    }</td>                                             
+                    <td class="p-3">${element.nom}</td>                                             
                     <td class="p-3">${element.prix * element.quantity}</td>
                     <td class="p-3">${element.quantity} </td>
                     <td class="p-3">
-                    <svg onclick="supprimerLigne" class="trash cursor-pointer w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    <svg onclick="supprimerLigne(${element.id})"   class="trash cursor-pointer w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
                     </svg>
                     </td> 
@@ -848,7 +848,7 @@ function insertElements() {
 insertElements();
 
 
-/* _____________________________________ Calcul de la total des prix____________________________________________________________ */
+/* _____________________________________ Calcul de total des prix____________________________________________________________ */
 let tableTotal = 0;
 function caluculTotal() {
   let totalCard = JSON.parse(localStorage.getItem("tableData")) || [];
@@ -859,7 +859,6 @@ function caluculTotal() {
     console.log(total);
     t += total;
   });
-  console.log(t);
   tableTotal = t;
   test.textContent = "total : " + tableTotal + " F CFA";
 }
@@ -867,20 +866,34 @@ caluculTotal();
 
 
 // Ajout de l'événements pour le clic sur tous les boutons avec la classe "supprimer"
-boutonsSupprimer = document.querySelectorAll(".trash");
-boutonsSupprimer.forEach(function (bouton) {
-  bouton.addEventListener("click", supprimerLigne);
-});
-function supprimerLigne(event) {
-  let bouton = event.target;
-  let indexBouton = bouton.getAttribute("data-index");
-  let ligneASupprimer = bouton.closest("tr");
-  if (ligneASupprimer) {
-    ligneASupprimer.remove();
+
+// boutonsSupprimer = document.querySelectorAll(".trash");
+
+// boutonsSupprimer.forEach(function (bouton) {
+//   bouton.addEventListener("click", (event) =>{
+//     supprimerLigne(event)
+//   });
+// });
+function supprimerLigne(indexBouton) {
+  let tableData = JSON.parse(localStorage.getItem("tableData"));
+  // let bouton = event.target;
+  // let indexBouton = bouton.getAttribute("data-id");
+   console.log(indexBouton);
+  // supprimer l'élément correspondant de tableData
+  if (indexBouton !== null) {
+    const newtable = tableData.filter(element=>element.id !== indexBouton)
+    
+    console.log(newtable);
+    localStorage.setItem("tableData", JSON.stringify(newtable));
   }
-  console.log(tableData);
-  caluculTotal()
+
+  // Supprimer la ligne HTML correspondante
+  insertElements();
+
+  // recalcul le total
+  caluculTotal();
 }
+
 
 // navbar
 Menu.addEventListener("click", function () {
