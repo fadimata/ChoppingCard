@@ -139,7 +139,7 @@ for (let i = 0; i < data.length; i++) {
     </div>`;
   }
 }
-/*_________________________________________________________________________________________________ */
+/*________________________________________Click de mes bouton de produit_________________________________________________________ */
 lienAll.addEventListener("click", function () {
   allCard.textContent = "";
   for (let i = 0; i < data.length; i++) {
@@ -802,7 +802,7 @@ btnAddToCard.forEach((button, index) => {
   button.addEventListener("click", () => {
     tBody.innerHTML = '';
     const achat = data[index];
-    const existeAchat = tableData.find((element) => element.nom === achat.nom);
+    const existeAchat = tableData.find((element) => element.nom === achat.nom) ;
     if (existeAchat) {
       existeAchat.quantity++;
     } else {
@@ -866,14 +866,6 @@ caluculTotal();
 
 
 // Ajout de l'événements pour le clic sur tous les boutons avec la classe "supprimer"
-
-// boutonsSupprimer = document.querySelectorAll(".trash");
-
-// boutonsSupprimer.forEach(function (bouton) {
-//   bouton.addEventListener("click", (event) =>{
-//     supprimerLigne(event)
-//   });
-// });
 function supprimerLigne(indexBouton) {
   let tableData = JSON.parse(localStorage.getItem("tableData"));
   // let bouton = event.target;
@@ -882,12 +874,9 @@ function supprimerLigne(indexBouton) {
   // supprimer l'élément correspondant de tableData
   if (indexBouton !== null) {
     const newtable = tableData.filter(element=>element.id !== indexBouton)
-    
-    console.log(newtable);
+    // console.log(newtable);
     localStorage.setItem("tableData", JSON.stringify(newtable));
   }
-
-  // Supprimer la ligne HTML correspondante
   insertElements();
 
   // recalcul le total
@@ -961,3 +950,13 @@ function showToast() {
 }
 
 
+// Récupérer le contenu et  de le vider en cliquant sur clear card
+  const viderLeContenu = document.getElementById('clear');
+  viderLeContenu.addEventListener('click', function() {    
+    let tBodyElement = document.getElementById('tBody');
+      tBodyElement.innerHTML = '';
+      test.textContent = "total : 0 " + " F CFA";
+    
+    localStorage.clear();
+  });
+  
