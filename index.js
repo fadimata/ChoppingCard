@@ -22,7 +22,7 @@ const totallll = 0;
 for (let i = 0; i < data.length; i++) {
   if (data[i].categori === "All") {
     allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -30,7 +30,7 @@ for (let i = 0; i < data.length; i++) {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -42,11 +42,11 @@ for (let i = 0; i < data.length; i++) {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <span  ><a data-id="${i}"
-                class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"}
+                class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"}
                  </a>
                  </span>
             </div>
@@ -61,7 +61,7 @@ lienAll.addEventListener("click", function () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].categori === "All") {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -69,7 +69,7 @@ lienAll.addEventListener("click", function () {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -81,11 +81,11 @@ lienAll.addEventListener("click", function () {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <a data-id="${i}"
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
@@ -98,7 +98,7 @@ lienFabric.addEventListener("click", function () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].categori === "Tissu") {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -106,7 +106,7 @@ lienFabric.addEventListener("click", function () {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -118,11 +118,11 @@ lienFabric.addEventListener("click", function () {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <a data-id="${i}"
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
@@ -135,7 +135,7 @@ lienDress.addEventListener("click", function () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].categori === "Robe") {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -143,7 +143,7 @@ lienDress.addEventListener("click", function () {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -155,11 +155,11 @@ lienDress.addEventListener("click", function () {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <a data-id="${i}"
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
@@ -172,7 +172,7 @@ lienBag.addEventListener("click", function () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].categori === "Bag") {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -180,7 +180,7 @@ lienBag.addEventListener("click", function () {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -192,11 +192,11 @@ lienBag.addEventListener("click", function () {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <a data-id="${i}"
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
@@ -209,7 +209,7 @@ lienShoes.addEventListener("click", function () {
   for (let i = 0; i < data.length; i++) {
     if (data[i].categori === "Shoes") {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               data[i].img
@@ -217,7 +217,7 @@ lienShoes.addEventListener("click", function () {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   data[i].nom
                 }</h5>
             </a>
@@ -229,11 +229,11 @@ lienShoes.addEventListener("click", function () {
             <span class='m-0 spanStar' ><i class="fa-solid fa-star"></i></span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   data[i].prix + " F CFA"
                 } </span>
                 <a data-id="${i}"
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
@@ -319,7 +319,7 @@ function insertElements() {
                     <td class="p-3">
                     <svg onclick="supprimerLigne(${
                       element.id
-                    })"   class="trash cursor-pointer w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                    })"   class="trash cursor-pointer w-6 h-6 text-gray-800 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z"/>
                     </svg>
                     </td> 
@@ -375,7 +375,7 @@ function recherche(e) {
   data.forEach((element) => {
     if (element.categori.toLowerCase().includes(e)) {
       allCard.innerHTML += `
-        <div class="w-full  max-w-sm  shadow dark:bg-gray-200 dark:border-gray-700 text-gray-950">
+        <div class="w-full  max-w-sm  shadow bg-gray-200 border-gray-700 text-gray-950">
         <a >
             <img class="p-4 rounded-t-lg" src=${
               element.img
@@ -383,7 +383,7 @@ function recherche(e) {
         </a>
         <div class="px-5 pb-5 ">
             <a> 
-                <h5 class="text-xl font-semibold  text-gray-900 dark:text-black">${
+                <h5 class="text-xl font-semibold  text-gray-900 text-black">${
                   element.nom
                 }</h5>
             </a>
@@ -481,14 +481,14 @@ function recherche(e) {
             </li>
           </ul>
                 <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3">5.0</span>
+                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded bg-blue-200 text-blue-800 ms-3">5.0</span>
             </div>
             <div class="flex items-center justify-between">
-                <span class="text-3xl font-bold text-gray-900 dark:text-black">${
+                <span class="text-3xl font-bold text-gray-900 text-black">${
                   element.prix + " F CFA"
                 } </span>
                 <a
-                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">${"Add to cart"} </a>
+                   class="btnAddToCard text-white cursor-pointer focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-gray-600 hover:bg-gray-700 focus:ring-gray-800">${"Add to cart"} </a>
             </div>
         </div>
     </div>`;
